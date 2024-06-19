@@ -4,5 +4,38 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+
+.border-container {
+  min-width: 1400px;
+}
+
+h1 {
+  padding-top: 30px;
+}
+
+.form-select,
+.form-control {
+  min-width: 250px;
+}
+
+#loginImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.loginForm {
+  min-width: 250px;
+  max-width: 500px;
+}
+
+.loginBox {
+  background-color: rgba(37, 39, 67, 0.553);
+  padding: 50px;
+  border-radius: 7px;
 }

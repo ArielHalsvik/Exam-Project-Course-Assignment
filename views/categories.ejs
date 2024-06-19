@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categories</title>
+    <%- include('./partials/head.ejs') %>
+  </head>
+  <body>
+    <%- include('./partials/navbar.ejs') %>
+
+    <!-- Title -->
+    <div class="d-flex align-items-center">
+      <h1>Categories</h1>
+      <p class="mt-5 ms-3">Manage categories for products</p>
+    </div>
+
+    <!-- Add Category Button -->
+    <div class="d-flex justify-content-end">
+      <button
+        class="btn btn-info px-5 text-white"
+        type="button"
+        onclick="addCategory()"
+      >
+        Add New
+      </button>
+    </div>
+
+    <!-- Category Table -->
+    <div class="p-2">
+      <div class="border-container">
+        <div class="border border-dark rounded">
+          <div class="bg-dark text-white p-3">
+            <h4>Current categories</h4>
+          </div>
+          <div class="p-3">
+            <div class="table-responsive">
+              <table class="table table-secondary table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th>CategoryId</th>
+                    <th>Name</th>
+                    <th>Options</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% categories.forEach((category) => { %>
+                  <tr>
+                    <td><%= category.CategoryId %></td>
+                    <td><%= category.Category %></td>
+                    <td class="d-flex">
+                      <button
+                        class="btn btn-warning text-white me-3"
+                        onclick="editCategory('<%= category.CategoryId %>', '<%= category.Category %>')"
+                      >
+                        <i class="fa-solid fa-pencil"></i>
+                      </button>
+                      <button
+                        class="btn btn-danger"
+                        onclick="deleteCategory('<%= category.CategoryId %>')"
+                      >
+                        <i class="fa-solid fa-trash-can"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <% }); %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./partials/scripts.ejs') %>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orders</title>
+    <%- include('./partials/head.ejs') %>
+  </head>
+  <body>
+    <%- include('./partials/navbar.ejs') %>
+
+    <!-- Title -->
+    <div class="d-flex align-items-center">
+      <h1>Orders</h1>
+      <p class="mt-5 ms-3">Manage user orders</p>
+    </div>
+
+    <!-- Order Table -->
+    <div class="p-2">
+      <div class="border-container">
+        <div class="border border-dark rounded">
+          <div class="bg-dark text-white p-3">
+            <h4>Orders</h4>
+          </div>
+          <div class="p-3">
+            <div class="table-responsive">
+              <table class="table table-secondary table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Order Number</th>
+                    <th>Created</th>
+                    <th>Updated</th>
+                    <th>User ID</th>
+                    <th>Membership</th>
+                    <th>Order Status</th>
+                    <th>Options</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% orders.forEach((order) => { %>
+                  <tr>
+                    <td><%= order.OrderId %></td>
+                    <td><%= order.OrderNumber %></td>
+                    <td><%= order.createdAt %></td>
+                    <td><%= order.updatedAt %></td>
+                    <td><%= order.UserId %></td>
+                    <td><%= order.Membership %></td>
+                    <td><%= order.Status %></td>
+                    <!-- Membership, sum etc?? -->
+                    <td>
+                      <button
+                        class="btn btn-warning text-white"
+                        type="button"
+                        onclick="editOrder('<%= JSON.stringify(statuses) %>', '<%= order.OrderId %>', '<%= order.Status %>')"
+                      >
+                        <i class="fa-solid fa-pencil"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <% }); %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <%- include('./partials/scripts.ejs') %>
+  </body>
+</html>

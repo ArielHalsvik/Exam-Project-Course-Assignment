@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "query": "INSERT INTO statuses (StatusId, Status) VALUES ('1', 'In Progress');"
+    },
+    {
+        "id": 2,
+        "query": "INSERT INTO statuses (StatusId, Status) VALUES ('2', 'Ordered');"
+    },
+    {
+        "id": 3,
+        "query": "INSERT INTO statuses (StatusId, Status) VALUES ('3', 'Completed');"
+    }
+]

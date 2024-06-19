@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users</title>
+    <%- include('./partials/head.ejs') %>
+  </head>
+  <body>
+    <%- include('./partials/navbar.ejs') %>
+
+    <!-- Title -->
+    <div class="d-flex align-items-center">
+      <h1>Users</h1>
+      <p class="mt-5 ms-3">Manage current registered users</p>
+    </div>
+
+    <!-- User Table -->
+    <div class="p-2">
+      <div class="border-container">
+        <div class="border border-dark rounded">
+          <div class="bg-dark text-white p-3">
+            <h4>Current registered users</h4>
+          </div>
+          <div class="p-3">
+            <div class="table-responsive">
+              <table class="table table-secondary table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Username</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Telephone</th>
+                    <th>Role</th>
+                    <th>Membership</th>
+                    <th>Options</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% users.forEach((user) => { %>
+                  <tr>
+                    <td><%= user.Id %></td>
+                    <td><%= user.UserName %></td>
+                    <td><%= user.FirstName %></td>
+                    <td><%= user.LastName %></td>
+                    <td><%= user.Email %></td>
+                    <td><%= user.Address %></td>
+                    <td><%= user.TelephoneNumber %></td>
+                    <td><%= user.Role %></td>
+                    <td><%= user.Membership %></td>
+                    <td>
+                      <button
+                        class="btn btn-warning text-white"
+                        type="button"
+                        onclick="editUser('<%= JSON.stringify(roles) %>','<%= user.Id %>', '<%= user.Email %>', '<%= user.FirstName %>', '<%= user.LastName %>', '<%= user.Address %>', '<%= user.TelephoneNumber %>', '<%= user.Role %>')"
+                      >
+                        <i class="fa-solid fa-pencil"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <% }); %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./partials/scripts.ejs') %>
+  </body>
+</html>

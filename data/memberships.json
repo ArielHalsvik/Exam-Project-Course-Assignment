@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "query": "INSERT INTO memberships (MembershipId, Membership, Purchases, Discount) VALUES ('1', 'Bronze', '0', '0');"
+    },
+    {
+        "id": 2,
+        "query": "INSERT INTO memberships (MembershipId, Membership, Purchases, Discount) VALUES ('2', 'Silver', '15', '15');"
+    },
+    {
+        "id": 3,
+        "query": "INSERT INTO memberships (MembershipId, Membership, Purchases, Discount) VALUES ('3', 'Gold', '30', '30');"
+    }
+]

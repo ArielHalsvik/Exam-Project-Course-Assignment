@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <%- include('./partials/head.ejs') %>
+  </head>
+  <body>
+    <!-- Background Image -->
+    <img id="loginImage" src="../images/mountain.jpg" alt="Scenery" />
+
+    <!-- Login Form -->
+    <div class="loginBox d-flex justify-content-center position-absolute translate-middle top-50 start-50">
+      <div class="container">
+        <h1 class="text-white text-center mb-3">Admin Login</h1>
+
+        <section class="loginForm mb-3">
+          <label for="userName" class="form-label text-white">Username or Email</label>
+          <input
+            id="userName"
+            name="userName"
+            class="form-control"
+            type="text"
+          />
+        </section>
+
+        <section class="loginForm mb-3">
+          <label for="password" class="form-label text-white">Password</label>
+          <input
+            id="password"
+            name="password"
+            class="form-control"
+            type="password"
+          />
+        </section>
+
+        <div class="d-flex justify-content-center">
+          <button
+            type="submit"
+            class="loginForm btn btn-info mt-4 text-white px-5"
+            onclick="login()"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./partials/scripts.ejs') %>
+  </body>
+</html>
