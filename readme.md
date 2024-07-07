@@ -2,11 +2,17 @@
 
 Grade: A (90-100)
 
-This is the Exam Project I got at the end of my second semester. The task was to create the back-end system for an e-commerce site with static data using API and MySQL, as well as create an Admin front-end user interface.
+This is the Exam Project I got at the end of my second semester. The task was to create the back-end system for an e-commerce site with static data using API and MySQL, as well as create an Admin front-end user interface. This task was done by me alone.
 
 The *Initial Commit* is the original code I got for the assignment.
 
 The *Final Commit* is my finished code that I sent in for the assignment.
+
+# Screenshots
+
+![AdminLogin](screenshots/screenshot1.png)
+
+![ProductsPage](screenshots/screenshot2.png)
 
 # Application Installation and Usage Instructions
 
